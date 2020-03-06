@@ -37,51 +37,53 @@ function ModalSwitch() {
 }
 
 const IMAGES = [
-  { id: 0, title: "Dark Orchid", color: "DarkOrchid" },
-  { id: 1, title: "Lime Green", color: "LimeGreen" },
-  { id: 2, title: "Tomato", color: "Tomato" },
-  { id: 3, title: "Seven Ate Nine", color: "#789" },
-  { id: 4, title: "Crimson", color: "Crimson" },
-  { id: 5, description: "des6", title: "Dark Orchid", color: "DarkOrchid" },
-  { id: 6, description: "des7", title: "Lime Green", color: "LimeGreen" },
-  { id: 7, description: "des8", title: "Tomato", color: "Tomato" },
-  { id: 8, description: "des9", title: "Seven Ate Nine", color: "#789" },
-  { id: 9, description: "des10", title: "Crimson", color: "Crimson" },
-  { id: 10, description: "des11", title: "Lime Green", color: "LimeGreen" },
-  { id: 11, description: "des12", title: "Tomato", color: "Tomato" },
-  { id: 12, description: "des13", title: "Seven Ate Nine", color: "#789" },
-  { id: 13, description: "des14", title: "Crimson", color: "Crimson" }
+  { id: 0, title: "Dark Orchid", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 1, title: "Lime Green", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 2, title: "Tomato", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 3, title: "Seven Ate Nine", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 4, title: "Crimson", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 5, description: "des6", title: "Dark Orchid", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 6, description: "des7", title: "Lime Green", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 7, description: "des8", title: "Tomato", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 8, description: "des9", title: "Seven Ate Nine", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 9, description: "des10", title: "Crimson", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 10, description: "des11", title: "Lime Green", imgUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 11, description: "des12", title: "Tomato", imgUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 12, description: "des13", title: "Seven Ate Nine", imgUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 13, description: "des14", title: "Crimson", imgUrl: "https://source.unsplash.com/featured/?nature,mountain" },
+  { id: 14, imgUrl: "https://source.unsplash.com/featured/?nature,mountain" }
 ];
 
-function Thumbnail({ color }) {
+// THUMBNAIL
+function Thumbnail({ imgUrl }) {
   return (
     <div
       style={{
         width: '100%',
-        height: 150,
-        background: color
+        height: 150
+       
       }}
-    />
+    >
+    {imgUrl}
+    </div>
   );
 }
 
-function Image({ color }) {
+// IMAGE when clicked on thumbnail
+function Image({ imgUrl }) {
   return (
-
-
     <div
       style={{
         width: "100%",
-        height: 400,
-        background: color
+        height: 400
       }}
-    ></div>
+    >{imgUrl}</div>
 
   );
 }
 
 
-
+// portfolio in grid
 function Gallery() {
   let location = useLocation();
 
@@ -91,7 +93,6 @@ function Gallery() {
         display: 'grid',
         gridTemplateColumns: 'repeat(5, 1fr)',
         gridGap: '15px',
-        maxWidth: '1000px',
         width: '100%',
         margin: '0 auto'
       }}
@@ -106,7 +107,7 @@ function Gallery() {
             state: { background: location }
           }}
         >
-          <Thumbnail color={i.color} />
+          <Thumbnail imgUrl={i.imgUrl} />
 
         </Link>
       ))}
@@ -142,14 +143,14 @@ function Modal() {
 
       }}
     >
-      <Link 
-      type="button" 
-      onClick={back}
-      style={{
-        display:'grid', justifyContent:'end',
-        paddingRight:'25px',
-        paddingTop: '5px',
-        fontSize: '3rem'
+      <Link
+        type="button"
+        onClick={back}
+        style={{
+          display: 'grid', justifyContent: 'end',
+          paddingRight: '25px',
+          paddingTop: '5px',
+          fontSize: '3rem'
         }}
       >
         X
@@ -160,10 +161,10 @@ function Modal() {
         style={{
           background: "#fff",
           padding: '100px'
-         
+
         }}
       >
-        <Image color={image.color} />
+        <Image imgUrl={image.imgUrl} />
         <h1>{image.title}</h1>
 
       </div>
