@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Thumbnail = ({ imgUrl }) => {
   return (
     <div>
@@ -13,7 +12,5 @@ const Thumbnail = ({ imgUrl }) => {
     </div>
   );
 }
-
-
 
 export default Thumbnail;

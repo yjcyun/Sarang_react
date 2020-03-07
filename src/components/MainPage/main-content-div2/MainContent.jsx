@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import TopNavItem from './TopNavItem';
-import ModalGalleryExample from '../gallery-div3/Modal';
+import ModalGallery from '../gallery-div3/ModalGallery';
 
 class MainContent extends Component {
 
@@ -52,7 +52,7 @@ class MainContent extends Component {
           </Nav>
         </div>
         <div>
-          <ModalGalleryExample 
+          <ModalGallery 
             filterCategory={this.state.filterCategory}
           />
         </div>
