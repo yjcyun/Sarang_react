@@ -7,6 +7,8 @@ import {
   useLocation,
   useParams
 } from "react-router-dom";
+import Thumbnail from './Thumbnail';
+import OpenThumbnail from './OpenThumbnail';
 
 
 export default class ModalGalleryExample extends React.Component {
@@ -104,36 +106,9 @@ const IMAGES = [
 ];
 
 
-// THUMBNAIL
-const Thumbnail = ({ imgUrl }) => {
-  return (
-    <div>
-      <img
-        style={{
-          width: '100%',
-          height: 150
-        }}
-        src={imgUrl} />
-    </div>
-  );
-}
 
 // IMAGE when clicked on thumbnail
-const Image = ({ imgUrl }) => {
-  return (
-    <div>
-      <img
-        style={{
-          width: "100%",
-          height: 400
-        }}
-        src={imgUrl} />
 
-
-
-    </div>
-  );
-}
 
 
 // portfolio in grid
@@ -166,7 +141,6 @@ function Gallery({ filterCategory }) {
           }}
         >
           <Thumbnail imgUrl={i.imgUrl} />
-
         </Link>
       ))}
     </div>
@@ -186,7 +160,6 @@ function Modal() {
   };
 
   return (
-
     <div
       // onClick={back}
       style={{
@@ -197,8 +170,7 @@ function Modal() {
         right: 0,
         background: "white",
         display: 'grid',
-        gridTemplateColumns: 'columns',
-
+        gridTemplateColumns: 'columns'
       }}
     >
       <Link
@@ -222,7 +194,7 @@ function Modal() {
 
         }}
       >
-        <Image imgUrl={image.imgUrl} />
+        <OpenThumbnail imgUrl={image.imgUrl} />
         <h1>{image.title}</h1>
 
       </div>
