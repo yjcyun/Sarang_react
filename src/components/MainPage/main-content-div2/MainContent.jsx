@@ -1,36 +1,66 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import TopNavItem from './TopNavItem';
 import ModalGalleryExample from '../gallery-div3/Modal';
 
-const MainContent = () => {
+class MainContent extends Component {
 
-  return (
-    <div>
-      <div style={{
-        backgroundColor: 'green',
-        height: '15vh'
-      }}>
+  state = {
+    filterCategory: 'all'
+  }
 
-        <Nav
-          activeKey="/home"
-          onSelect={selectedKey => alert(`selected ${selectedKey}`)}
-        >
-          <TopNavItem filterNav="All" />
-          <TopNavItem filterNav="UI/UX" />
-          <TopNavItem filterNav="Graphic Design" />
-          <TopNavItem filterNav="Personal" />
-          <TopNavItem filterNav="Sketchbook" />
-          <TopNavItem filterNav="Medium" />
-        </Nav>
-      </div>
+  navOnClick = (event) => {
+    this.setState({filterCategory: event.target.getAttribute('filtername')});
+  }
+
+  render() {
+    return (
       <div>
-        <ModalGalleryExample />
+        <div style={{
+          backgroundColor: 'green',
+          height: '15vh'
+        }}>
+
+          <Nav
+            activeKey="/home"
+            onSelect={selectedKey => alert(`selected ${selectedKey}`)}
+          >
+            <TopNavItem
+              filterName="all"
+              onClick={this.navOnClick}
+              label="All" />
+            <TopNavItem
+              filterName="ui-ux"
+              onClick={this.navOnClick}
+              label="UI/UX" />
+            <TopNavItem
+              filterName="graphic-design"
+              onClick={this.navOnClick}
+              label="Graphic Design" />
+            <TopNavItem
+              filterName="personal"
+              onClick={this.navOnClick}
+              label="Personal" />
+            <TopNavItem
+              filterName="sketchbook"
+              onClick={this.navOnClick}
+              label="Sketchbook" />
+            <TopNavItem
+              filterName="medium"
+              onClick={this.navOnClick}
+              label="Medium" />
+          </Nav>
+        </div>
+        <div>
+          <ModalGalleryExample 
+            filterCategory={this.state.filterCategory}
+          />
+        </div>
+
       </div>
 
-    </div>
-
-  );
+    );
+  }
 }
 
 export default MainContent;

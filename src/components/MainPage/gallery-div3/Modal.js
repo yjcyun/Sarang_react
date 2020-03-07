@@ -1,7 +1,6 @@
 import React from "react";
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   Link,
   useHistory,
@@ -9,82 +8,136 @@ import {
   useParams
 } from "react-router-dom";
 
-export default function ModalGalleryExample() {
-  return (
-    <Router>
-      <ModalSwitch />
-    </Router>
-  );
+
+export default class ModalGalleryExample extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  // componentDidMount() {
+  //   console.log(this.props.filterCategory)
+  // }
+
+  render() {
+    return (
+      <Router>
+        <ModalSwitch filterCategory={this.props.filterCategory} />
+      </Router>
+    );
+  }
 }
 
-function ModalSwitch() {
-
-  // This piece of state is set when one of the
-  // gallery links is clicked. The `background` state
-  // is the location that we were at when one of
-  // the gallery links was clicked. If it's there,
-  // use it as the location for the <Switch> so
-  // we show the gallery in the background, behind
-  // the modal.
-
+const ModalSwitch = ({ filterCategory }) => {
   return (
     <div>
-      <Route path="/portfolio" children={<Gallery />} />
-      {/* Show the modal when a background page is set */}
+      <Route path="/portfolio" children={<Gallery
+        filterCategory={filterCategory}
+
+      />} />
+
       {<Route path="/img/:id" children={<Modal />} />}
     </div>
   );
 }
 
 const IMAGES = [
-  { id: 0, title: "Dark Orchid", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 1, title: "Lime Green", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 2, title: "Tomato", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 3, title: "Seven Ate Nine", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 4, title: "Crimson", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 5, description: "des6", title: "Dark Orchid", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 6, description: "des7", title: "Lime Green", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 7, description: "des8", title: "Tomato", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 8, description: "des9", title: "Seven Ate Nine", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 9, description: "des10", title: "Crimson", imgeUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 10, description: "des11", title: "Lime Green", imgUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 11, description: "des12", title: "Tomato", imgUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 12, description: "des13", title: "Seven Ate Nine", imgUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 13, description: "des14", title: "Crimson", imgUrl: "https://source.unsplash.com/featured/?nature,mountain" },
-  { id: 14, imgUrl: "https://source.unsplash.com/featured/?nature,mountain" }
+  {
+    id: 1, category: ['ui-ux'],
+    imgUrl: "https://source.unsplash.com/random?sig=124"
+  },
+  {
+    id: 0, category: ['graphic-design'],
+    imgUrl: "https://source.unsplash.com/random?sig=123"
+  },
+  {
+    id: 2, category: ['graphic-design'],
+    imgUrl: "https://source.unsplash.com/random?sig=125"
+  },
+  {
+    id: 3, category: ['graphic-design'],
+    imgUrl: "https://source.unsplash.com/random?sig=126"
+  },
+  {
+    id: 4, category: ['ui-ux'],
+    imgUrl: "https://source.unsplash.com/random?sig=127"
+  },
+  {
+    id: 5, category: ['ui-ux'],
+    imgUrl: "https://source.unsplash.com/random?sig=128"
+  },
+  {
+    id: 6, category: ['personal'],
+    imgUrl: "https://source.unsplash.com/random?sig=129"
+  },
+  {
+    id: 7, category: ['sketchbook'],
+    imgUrl: "https://source.unsplash.com/random?sig=130"
+  },
+  {
+    id: 8, category: ['personal'],
+    imgUrl: "https://source.unsplash.com/random?sig=131"
+  },
+  {
+    id: 9, category: ['ui-ux'],
+    imgUrl: "https://source.unsplash.com/random?sig=132"
+  },
+  {
+    id: 10, category: ['ui-ux'],
+    imgUrl: "https://source.unsplash.com/random?sig=5"
+  },
+  {
+    id: 11, category: ['personal'],
+    imgUrl: "https://source.unsplash.com/random?sig=4"
+  },
+  {
+    id: 12, category: ['medium'],
+    imgUrl: "https://source.unsplash.com/random?sig=3"
+  },
+  {
+    id: 13, category: ['medium'],
+    imgUrl: "https://source.unsplash.com/random?sig=2"
+  },
+  {
+    id: 14, category: ['medium'],
+    imgUrl: "https://source.unsplash.com/random?sig=1"
+  }
 ];
 
+
 // THUMBNAIL
-function Thumbnail({ imgUrl }) {
+const Thumbnail = ({ imgUrl }) => {
   return (
-    <div
-      style={{
-        width: '100%',
-        height: 150
-       
-      }}
-    >
-    {imgUrl}
+    <div>
+      <img
+        style={{
+          width: '100%',
+          height: 150
+        }}
+        src={imgUrl} />
     </div>
   );
 }
 
 // IMAGE when clicked on thumbnail
-function Image({ imgUrl }) {
+const Image = ({ imgUrl }) => {
   return (
-    <div
-      style={{
-        width: "100%",
-        height: 400
-      }}
-    >{imgUrl}</div>
+    <div>
+      <img
+        style={{
+          width: "100%",
+          height: 400
+        }}
+        src={imgUrl} />
 
+
+
+    </div>
   );
 }
 
 
 // portfolio in grid
-function Gallery() {
+function Gallery({ filterCategory }) {
   let location = useLocation();
 
   return (
@@ -97,7 +150,12 @@ function Gallery() {
         margin: '0 auto'
       }}
     >
-      {IMAGES.map(i => (
+      {IMAGES.filter(element => {
+        if (filterCategory === 'all') {
+          return true;
+        }
+        return element.category.includes(filterCategory)
+      }).map(i => (
         <Link
           key={i.id}
           to={{

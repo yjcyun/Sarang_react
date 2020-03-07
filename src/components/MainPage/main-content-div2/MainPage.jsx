@@ -17,7 +17,7 @@ const MainPage = () => {
 }
 
 const sideNavStyle={
-  backgroundColor: 'blue',
+  
   display: 'inline-block',
   width: '15%',
   height: '100vh',
