@@ -1,0 +1,23 @@
+.modal-background {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  bottom: 0;
+  right: 0;
+  background: white;
+  display: grid;
+  grid-template-columns: columns;
+}
+
+.close-modal {
+  display: grid;
+  justify-content: end;
+  padding-right: 25px;
+  padding-top: 5px;
+  font-size: 3rem;
+}
+
+.modal-container {
+  background: #fff;
+  padding: 100px;
+}

@@ -5,11 +5,12 @@ import {
   useHistory,
   useParams
 } from "react-router-dom";
+import './Modal.styles.css';
 
-const Modal = ({images}) => {
+const Modal = ({ images }) => {
   let history = useHistory();
-  let { id } = useParams();
-  let image = images[parseInt(id, 10)];
+  let { imageId } = useParams();
+  let image = images.find(i => i.id == imageId);
 
   if (!image) return null;
 
@@ -19,38 +20,14 @@ const Modal = ({images}) => {
   };
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: 0,
-        left: '15%',
-        bottom: 0,
-        right: 0,
-        background: "white",
-        display: 'grid',
-        gridTemplateColumns: 'columns'
-      }}
-    >
+    <div className='modal-background'>
       <Link
         type="button"
         onClick={back}
-        style={{
-          display: 'grid', justifyContent: 'end',
-          paddingRight: '25px',
-          paddingTop: '5px',
-          fontSize: '3rem'
-        }}
-      >
-        X
+        className='close-modal'>X
       </Link>
 
-      <div
-        style={{
-          background: "#fff",
-          padding: '100px'
-
-        }}
-      >
+      <div className="modal-container">
         <OpenThumbnail imgUrl={image.imgUrl} />
         <h1>{image.title}</h1>
 

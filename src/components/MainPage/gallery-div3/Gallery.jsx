@@ -1,21 +1,14 @@
 import React from 'react';
 import Thumbnail from './Thumbnail';
 import { Link, useLocation } from "react-router-dom";
+import './Gallery.styles.css';
 
 
 function Gallery({ filterCategory, images }) {
   let location = useLocation();
 
   return (
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(5, 1fr)',
-        gridGap: '15px',
-        width: '100%',
-        margin: '0 auto'
-      }}
-    >
+    <div className='gallery'>
       {images.filter(element => {
         if (filterCategory === 'all') {
           return true;
@@ -26,8 +19,6 @@ function Gallery({ filterCategory, images }) {
           key={i.id}
           to={{
             pathname: `/img/${i.id}`,
-            // This is the trick! This link sets
-            // the `background` in location state.
             state: { background: location }
           }}
         >

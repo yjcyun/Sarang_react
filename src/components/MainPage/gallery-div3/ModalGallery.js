@@ -31,7 +31,7 @@ const ModalSwitch = ({ filterCategory }) => {
       />
 
       {<Route
-        path="/img/:id"
+        path="/img/:imageId"
         children={
           <Modal images={ImageData} />
         }
