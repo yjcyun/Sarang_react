@@ -11,6 +11,10 @@
   padding-bottom:5px;
 }
 
+.side-nav-link:hover {
+  color: red;
+}
+
 .side-nav-logo {
   width: 95%;
   height: auto;
