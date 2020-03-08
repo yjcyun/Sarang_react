@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import TopNavItem from './TopNavItem';
 import ModalGallery from '../gallery-div3/ModalGallery';
+import './MainContent.styles.css';
 
 class MainContent extends Component {
 
@@ -16,19 +17,16 @@ class MainContent extends Component {
   render() {
     return (
       <div>
-        <div style={{
-          backgroundColor: 'green',
-          height: '15vh'
-        }}>
-
+        <div className="top-nav">
           <Nav
             activeKey="/home"
-            onSelect={selectedKey => alert(`selected ${selectedKey}`)}
+            // onSelect={selectedKey => alert(`selected ${selectedKey}`)}
           >
             <TopNavItem
               filterName="all"
               onClick={this.navOnClick}
-              label="All" />
+              label="All"
+              className="nav-filter" />
             <TopNavItem
               filterName="ui-ux"
               onClick={this.navOnClick}

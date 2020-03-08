@@ -5,9 +5,9 @@ import Modal from './Modal';
 import { ImageData } from './ImageData';
 
 export default class ModalGallery extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   render() {
     return (
       <Router>

@@ -1,0 +1,16 @@
+.side-nav {
+  margin-top: 3rem; 
+  margin-left: 1.5rem;
+}
+
+.side-nav-link {
+  color: black;
+  font-size: 1.3rem; 
+  padding: 0;
+}
+
+.side-nav-logo {
+  max-width: 95%;
+  margin-left: 10px;
+  margin-top: 20px;
+}

@@ -1,35 +1,33 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
+import './SideNav.styles.css';
 
 
 const SideNav = () => {
   return (
     <div>
       <Nav
-        style={{ marginTop: '2rem', marginLeft: '1.5rem' }}
-        defaultActiveKey="/home" className="flex-column"
-      >
+        defaultActiveKey="/portfolio"
+        className="flex-column side-nav">
         <Nav.Link
           href="/portfolio"
-          style={{ color: 'black', fontSize: '1.3rem', padding: '0' }}
-        >
-          portfolio
-        </Nav.Link>
-        <Nav.Link 
-        style={{ color: 'black', fontSize: '1.3rem', padding: '0' }} eventKey="link-1">about</Nav.Link>
-        <Nav.Link 
-        style={{ color: 'black', fontSize: '1.3rem', padding: '0', marginBottom:'1.5rem' }} 
+          className="side-nav-link">portfolio</Nav.Link>
+        <Nav.Link
+          className="side-nav-link" 
+          eventKey="link-1">about</Nav.Link>
+        <Nav.Link
+        className="side-nav-link"
         eventKey="link-2">store</Nav.Link>
       </Nav>
 
 
-      <a href="">
+      <Nav.Link href="/">
         <img
-          className="sidebar-logo"
+          // className="sidebar-logo"
           src="img/logo-red-rotated.png"
           alt="logo"
-          style={{ maxWidth: '100%'}} />
-      </a>
+          className="side-nav-logo" />
+      </Nav.Link>
 
     </div>
   );

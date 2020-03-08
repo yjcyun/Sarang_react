@@ -1,14 +1,22 @@
 import React from 'react';
 
-const OpenThumbnail = ({imgUrl}) => {
+const imgOnClick = () => {
+  return(
+    console.log("Clicked!!")
+  )
+}
+
+const OpenThumbnail = ({imgUrl}) => { 
+
   return (
-    <div>
+    <div onClick={imgOnClick}>
       <img
         style={{
           width: "100%",
           height: 400
         }}
-        src={imgUrl} />
+        src={imgUrl}
+        alt="projects" />
     </div>
   );
 }

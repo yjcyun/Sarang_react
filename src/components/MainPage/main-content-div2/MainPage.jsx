@@ -1,14 +1,15 @@
 import React from 'react';
 import SideNav from '../side-nav-div1/SideNav';
 import MainContent from './MainContent';
+import './MainPage.styles.css';
 
 const MainPage = () => {
   return (
     <div>
-      <div style={sideNavStyle}>
+      <div className="sidenav">
         <SideNav />
       </div>
-      <div style={mainContentStyle}>
+      <div className="main-content">
         <MainContent />
       </div>
     </div>
@@ -16,20 +17,8 @@ const MainPage = () => {
 
 }
 
-const sideNavStyle={
-  
-  display: 'inline-block',
-  width: '15%',
-  height: '100vh',
-  float: 'left'
-}
 
-const mainContentStyle={
-  backgroundColor: 'white',
-  display: 'inline-block',
-  width: '85%',
-  height: '100vh',
-  float: 'right'
-}
+
+
 
 export default MainPage;

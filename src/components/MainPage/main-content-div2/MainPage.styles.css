@@ -1,0 +1,13 @@
+.sidenav {
+  display: inline-block;
+  width: 15%;
+  height: 100vh;
+  float: left;
+}
+
+.main-content {
+  background-color: white;
+  display: inline-block;
+  width: 85%;
+  height: 100vh;
+}

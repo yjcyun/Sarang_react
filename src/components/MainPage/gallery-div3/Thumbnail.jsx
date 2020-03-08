@@ -5,10 +5,11 @@ const Thumbnail = ({ imgUrl }) => {
     <div>
       <img
         style={{
-          width: '100%',
-          height: 150
+          width: 200,
+          height: 200
         }}
-        src={imgUrl} />
+        src={imgUrl}
+        alt="thumbnail" />
     </div>
   );
 }

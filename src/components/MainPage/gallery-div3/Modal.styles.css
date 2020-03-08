@@ -19,5 +19,9 @@
 
 .modal-container {
   background: #fff;
-  padding: 100px;
+  padding: 0 200px;
+}
+
+.modal-title {
+  margin-top: 10px;
 }
