@@ -19,8 +19,6 @@ const SideNav = () => {
         className="side-nav-link"
         eventKey="link-2">store</Nav.Link>
       </Nav>
-
-
       <Nav.Link href="/">
         <img
           // className="sidebar-logo"
@@ -28,7 +26,6 @@ const SideNav = () => {
           alt="logo"
           className="side-nav-logo" />
       </Nav.Link>
-
     </div>
   );
 }

@@ -59,5 +59,25 @@ export const ImageData = [
   {
     id: 14, category: ['medium'], title:"Lorem ipsum dolor sit", description:'this is where the description',
     imgUrl: "https://source.unsplash.com/random?sig=1"
-  }
+  },
+  {
+    id: 15, category: ['personal'], title:"Lorem ipsum dolor sit", description:'this is where the description',
+    imgUrl: "https://source.unsplash.com/random?sig=4"
+  },
+  {
+    id: 16, category: ['medium'], title:"Lorem ipsum dolor sit", description:'this is where the description',
+    imgUrl: "https://source.unsplash.com/random?sig=3"
+  },
+  {
+    id: 17, category: ['medium'], title:"Lorem ipsum dolor sit", description:'this is where the description',
+    imgUrl: "https://source.unsplash.com/random?sig=2"
+  },
+  {
+    id: 18, category: ['medium'], title:"Lorem ipsum dolor sit", description:'this is where the description',
+    imgUrl: "https://source.unsplash.com/random?sig=1"
+  },
+  {
+    id: 19, category: ['medium'], title:"Lorem ipsum dolor sit", description:'this is where the description',
+    imgUrl: "https://source.unsplash.com/random?sig=1"
+  } 
 ];
